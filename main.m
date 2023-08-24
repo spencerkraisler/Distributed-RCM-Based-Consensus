@@ -1,6 +1,12 @@
-clear; close all; clc
-
 % Written by Spencer Kraisler
+%
+% This is an implementation of the algorithm from the paper Distributed 
+% Consensus on Manifolds using the Riemannian Center of Mass.
+%
+% Aug. 24, 2023
+%
+
+clear; close all; clc
 
 %% Init constraints
 N = 10; % num agents
