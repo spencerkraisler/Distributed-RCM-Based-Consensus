@@ -1,3 +1,5 @@
+% Written by Spencer Kraisler
+
 function out = RiemannianCenterOfMass(x, M)
     % Computes the Riemannian center of mass (RCM) of a set of points on a
     % manifold.

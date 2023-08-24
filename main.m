@@ -1,15 +1,16 @@
 clear; close all; clc
 
+% Written by Spencer Kraisler
+
 %% Init constraints
 N = 10; % num agents
 tol = 1e-6; % tolerance for sim
 max_steps = 200; % max steps for sim
 
-n = 3;
-M = rotationsfactory(n); % SO(3) manifold object
+n = 5;
+M = rotationsfactory(n); % SO(n) manifold object
 M.inner = @(x, xi, eta) trace(xi'*eta)/2;
 M.norm = @(x, xi) sqrt(M.inner(x, xi, xi));
-I = M.lie_identity();
 
 % Generate random connected undirected graph
 p = .4; % probability of 2 nodes being adjacent
@@ -20,8 +21,8 @@ sigma = pi/2; % st dev of gaussian distr
 center = M.rand(); % generate init agent positions around center
 x = repmat({}, 1, N);
 for i = 1:N
-    v_i = sigma*rand*M.randvec(I);
-    x_i = center*M.exp(I, v_i);
+    v_i = sigma*rand*M.randvec(center);
+    x_i = M.exp(center, v_i);
     x{i} = x_i;
 end
 

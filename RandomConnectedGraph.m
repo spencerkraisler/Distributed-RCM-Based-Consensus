@@ -1,3 +1,5 @@
+% Written by Spencer Kraisler
+
 function G = RandomConnectedGraph(n, p)
     % Generates a random connected graph.
     % n: number of nodes
