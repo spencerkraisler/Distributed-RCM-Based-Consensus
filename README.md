@@ -1,7 +1,7 @@
 # Distributed-RCM-Based-Consensus
 
 This repo is an implementation of the algorithm from the paper [Distributed Consensus on Manifolds
-using the Riemannian Center of Mass](https://par.nsf.gov/biblio/10422995). 
+using the Riemannian Center of Mass](https://par.nsf.gov/biblio/10422995). This algorithm synchronizes a set of agents over any manifold, as long as it has bounded sectional curvature. Any manifold in the Manopt library may be used.  
 
 Just run ``main.m``.
 
